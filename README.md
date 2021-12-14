@@ -2,10 +2,8 @@
 
 Dr. Tuomas Yrttimaa, School of Forest Sciences, University of Eastern Finland // tuomas.yrttimaa@uef.fi
 
-Disclaimer
 This is a readme document for the users of automatic point cloud processing tools to characterize trees initially developed and described in detail in Yrttimaa et al. (2019, 2020) and openly available at (linkki). The tools have been implemented in MATLAB but the workflow requires the user to also have an R statistical software and a licensed LAStools software installed on the computer. The tools can be used free of charge under the CC BY 4.0 license. Appropriately citing the original articles as well as this document is preferred when used within academia. No guarantees or technical support related to the use and applicability of the tools are provided by default. For scientific or commercial cooperation, please contact the author.
 
-Contents
 The point cloud processing tools consist of a main script (mainscript.m) and a group of functions (see Table 1) executed subsequently to:
 1) import point cloud data (pc_import_las.m),
 2) detect tree crown segments (pc_detect_trees_chm.m),
@@ -49,6 +47,7 @@ Contains some functions to be used in the data processing workflow.
 
 
 References
+
 Chernov N. 2021. Circle Fit (Taubin method) (https://www.mathworks.com/matlabcentral/fileexchange/22678-circle-fit-taubin-method), MATLAB Central File Exchange. Retrieved December 14, 2021.
 
 Meyer F, Beucher S. 1990. Morphological segmentation. Journal of visual communication and image representation, 1(1), 21-46. https://doi.org/10.1016/1047-3203(90)90014-M
