@@ -2,8 +2,10 @@
 
 Dr. Tuomas Yrttimaa, School of Forest Sciences, University of Eastern Finland // tuomas.yrttimaa@uef.fi
 
-This is a readme document for the users of automatic point cloud processing tools to characterize trees initially developed and described in detail in Yrttimaa et al. (2019, 2020) and openly available at (linkki). The tools have been implemented in MATLAB but the workflow requires the user to also have an R statistical software and a licensed LAStools software installed on the computer. The tools can be used free of charge under the CC BY 4.0 license. Appropriately citing the original articles as well as this document is preferred when used within academia. No guarantees or technical support related to the use and applicability of the tools are provided by default. For scientific or commercial cooperation, please contact the author.
+## Disclaimer
+This is a readme document for the users of automatic point cloud processing tools to characterize trees initially developed and described in detail in Yrttimaa et al. (2019, 2020). The tools have been implemented in MATLAB but the workflow requires the user to also have an R statistical software and a licensed LAStools software installed on the computer. The tools can be used free of charge under the CC BY 4.0 license. Appropriately citing the original articles as well as this document is preferred when used within academia. No guarantees or technical support related to the use and applicability of the tools are provided by default. For scientific or commercial cooperation, please contact the author.
 
+## Contents
 The point cloud processing tools consist of a main script (mainscript.m) and a group of functions (see Table 1) executed subsequently to:
 1) import point cloud data (pc_import_las.m),
 2) detect tree crown segments (pc_detect_trees_chm.m),
@@ -22,32 +24,37 @@ As an output, the point cloud processing tools return for each tree, identified 
 
 The point cloud processing tools have been designed to process one multi-scan terrestrial laser scanning point cloud covering a sample plot of 32 m x 32 m in size, including a variety of different-sized trees. Performance of the point cloud-based methods have been investigated in southern boreal forests, and extensive investigations of its feasibility in characterizing trees is summarized in Yrttimaa (2021). When applied outside the southern boreal forest zone, the user may need to adjust some of the computing parameters. 
 
-Table 1. Description of the contents of the automatic point cloud processing tools. More details of the point cloud processing procedure can be found in the original research articles (Yrttimaa et al. 2019, 2020). 
-Script name
-Description
-mainscript.m
+## Description of the contents
+
+- **mainscript.m**
 Define parameter values, directories, and filenames, run the processing functions.
-pc_import_las.m
+
+- **pc_import_las.m**
 Import height-normalized terrestrial laser scanning point cloud data as .las-format and extract point cloud extent. This function uses the lasdata.m function (Kumpumäki 2021) to read .las files.
-pc_detect_trees_chm.m
+
+- **pc_detect_trees_chm.m**
 Detect tree crown segments to partition the point cloud into smaller parts in a meaningful way. This requires the user to have R statistical software and required packages ‘raster’, ‘ForestTools’, ‘rgdal’, and ‘sp’. Crown segmentation is carried out in R using a simple canopy height model (CHM) -based approach employing variable window filtering (Popescu and Wynne 2004) and marker-controlled watershed segmentation (Meyer and Beucher 1990). The related R script detect_trees_chm.R is there for that purpose. The user needs to ensure that the correct spatial reference system (epsg) is used. The lascanopy-tool from the LAStools software is used for generating the related CHM (see lastools.m). Outputs crown segment polygons.
-pc_tree_extraction.m
+
+- **pc_tree_extraction.m**
 Delineate the sample plot point cloud based on the detected crown segments using the point-in-polygon approach. This uses the lasclip-tool from the LAStools software and outputs .las-files of individual trees.
-pc_classify.m
+
+- **pc_classify.m**
 This function executes the point cloud classification for each individual tree point cloud. It is an iterative procedure beginning from the base of the tree and proceeding towards the tree top, aiming at separating points representing the tree stem (i.e., stem points) from points not representing the tree stem (i.e., non-stem points). Smooth, cylindrical and vertical surfaces with vertical continuity are the point cloud characteristics that are to distinct a tree stem from branches and foliage. For more details, see Yrttimaa et al. (2020). Outputs stem points and crown points as .txt-files for each tree. The LAStools software can be used to merge tree-wise extracted point clouds together.
-pc_treeMetrics.m
+ 
+ - **pc_treeMetrics.m**
 Loops through all the detected trees and uses the function compute_treemetrics.m to extract tree metrics (i.e. XY-location, diameter and the basal area at the breast height, tree height, stem volume) for each tree. 
-compute_treemetrics.m
+
+- **compute_treemetrics.m**
 Tree metrics for each extracted tree is computed using this function. It uses the function CircleFitByTaubin.m (Chernov 2021) to fit circles into horizontal point cloud slices to measure stem cross-section diameters. Taper curve is stored for each tree to quantify its characteristics. For more details, see Yrttimaa et al. (2019).
-lastools.m
+
+- **lastools.m**
 This function enables the user to run LAStools commands on MATLAB. User’s own LAStools bin directory must be defined in order to use this function.
-myfunctions.m
+
+- **myfunctions.m**
 Contains some functions to be used in the data processing workflow.
 
 
-
-References
-
+## References
 Chernov N. 2021. Circle Fit (Taubin method) (https://www.mathworks.com/matlabcentral/fileexchange/22678-circle-fit-taubin-method), MATLAB Central File Exchange. Retrieved December 14, 2021.
 
 Meyer F, Beucher S. 1990. Morphological segmentation. Journal of visual communication and image representation, 1(1), 21-46. https://doi.org/10.1016/1047-3203(90)90014-M
