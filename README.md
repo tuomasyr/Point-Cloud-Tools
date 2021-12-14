@@ -5,6 +5,8 @@ Dr. Tuomas Yrttimaa, School of Forest Sciences, University of Eastern Finland //
 ## Disclaimer
 This is a readme document for the users of automatic point cloud processing tools to characterize trees initially developed and described in detail in Yrttimaa et al. ([2019](https://doi.org/10.3390/rs11121423), [2020](https://doi.org/10.1016/j.isprsjprs.2020.08.017)). The tools have been implemented in [MATLAB](https://se.mathworks.com/products/matlab.html) but the workflow requires the user to also have an [R statistical software](https://www.r-project.org/) and a licensed [LAStools software](https://rapidlasso.com/) installed on the computer. The tools can be used free of charge under the [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/). Appropriately citing the original research articles as well as this document is preferred when used within academia. No guarantees or technical support related to the use and applicability of the tools are provided by default. For scientific or commercial cooperation, please contact the author.
 
+To cite v1.0.1: Yrttimaa T. (2021). Automatic Point Cloud Processing Tools to Characterize Trees (Point-Cloud-Tools: v1.0.1). Zenodo. [https://doi.org/10.5281/zenodo.5779288](https://doi.org/10.5281/zenodo.5779288).
+
 ## Contents
 The point cloud processing tools consist of a main script (mainscript.m) and a group of functions (see Table 1) executed subsequently to:
 1) import point cloud data (pc_import_las.m),
