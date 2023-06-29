@@ -9,13 +9,13 @@
 % INPUT:
 % - plot_id       <- sample plot identifier [integer]
 % - tree_id       <- tree identifier [integer]
-% - pc            <- point cloud, representing an individual tree, ground removed, height normalized [pointCloud]
+% - pc            <- point cloud, representing an individual tree, ground removed, height normalized [3-D pointCloud Object]
 % - resultsfolder <- directory of a folder to store results [string]
 %
 % OUTPUT:
-% - pcstemsurf    <- points representing stem surface
-% - pcbranches    <- points of individual branches, segmentation ID stored as an Intensity value
-% - pcrestofcrown <- points not assigned a branch segmentation
+% - pcstemsurf    <- points representing stem surface [3-D pointCloud Object]
+% - pcbranches    <- points of individual branches, segmentation ID stored as an Intensity value [3-D pointCloud Object]
+% - pcrestofcrown <- points not assigned a branch segmentation [3-D pointCloud Object]
 % - branchlist    <- a table of branches and their characteristics: id, 3D-location (cartesian & cylinder coordinates), horizontal length, vertical length, actual length, insertion angle,
 %
 % Required functions:
