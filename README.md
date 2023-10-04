@@ -8,7 +8,7 @@ This is a readme document for the users of automatic point cloud processing tool
 To cite Yrttimaa T. (2021). Automatic Point Cloud Processing Tools to Characterize Trees (Point-Cloud-Tools). Zenodo. [https://doi.org/10.5281/zenodo.5779288](https://doi.org/10.5281/zenodo.5779288).
 
 ## Contents
-The point cloud processing tools consist of a main script (mainscript.m) and a group of functions (see Table 1) executed subsequently to:
+The point cloud processing tools consist of a main script (mainscript.m) and a group of functions executed subsequently to:
 1) import point cloud data (pc_import.m),
 2) detect tree crown segments (pc_detect_tree_crowns_v2.m),
 3) extract point clouds for individual trees or groups of trees (pc_tree_extraction.m),
