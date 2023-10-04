@@ -64,6 +64,19 @@ This function enables the user to run LAStools commands on MATLAB. User’s own 
 - **myfunctions.m**
 Contains some functions to be used in the data processing workflow.
 
+## Required toolboxes
+The tools have been implemented in MATLAB 2022b (version 9.13) and requires following toolboxes:
+- Signal Processing Toolbox
+- Mapping Toolbox
+- Image Processing Toolbox
+- Statistics and Machine Learning Toolbox
+- Curve Fitting Toolbox
+- Computer Vision Toolbox
+- Lidar Toolbox
+- Parallel Computing Toolbox
+- MATLAB Parallel Server
+- Polyspace Bug Finder
+
 ## References
 Chernov N. 2021. Circle Fit (Taubin method) (https://www.mathworks.com/matlabcentral/fileexchange/22678-circle-fit-taubin-method), MATLAB Central File Exchange. Retrieved December 14, 2021.
 
